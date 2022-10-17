@@ -17,6 +17,32 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//string
 Route::get('coba', function(){
     return "halooo :D";
+});
+
+//array JSON
+Route::get('coba1', function(){
+    return ['rafa', 'rafi', 'rafo'];
+});
+
+//array JSON
+Route::get('coba2', function(){
+    return [
+        'Nama' => 'Reyner Atira Prasetyo',
+        'NIS' => 3103120193,
+        'Kelas' => 'XII RPL 6'
+    ];
+});
+
+//array JSON (status code)
+Route::get('coba3',function(){
+    return response()->json(
+        [
+            'Nama' => 'Reyner Atira Prasetyo',
+            'NIS' => 3103120193,
+            'Kelas' => 'XII RPL 6'
+        ], 201
+    );
 });

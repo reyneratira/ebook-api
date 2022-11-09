@@ -14,9 +14,12 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
-    }
-
+        $book = Book::all();
+            return response()->json([
+                'status' => 200,
+                'data' => $book
+            ], 200);
+        }
     /**
      * Show the form for creating a new resource.
      *

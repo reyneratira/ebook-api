@@ -15,18 +15,11 @@ class AuthorController extends Controller
     public function index()
     {
         $author = Author::all();
-        if ($author){
             return response()->json([
                 'status' => 200,
                 'data' => $author
             ], 200);
-        } else {
-            return response()->json([
-                'status' => 404,
-                'message'=> 'data kosong'
-            ], 404);
         }
-    }
 
     /**
      * Show the form for creating a new resource.
